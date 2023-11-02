@@ -1,8 +1,8 @@
 const path = require('node:path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-/**@type {import('webpack').Configuration} */
+/** @type {import('webpack').Configuration} */
 
 module.exports = {
   // Entry
@@ -11,11 +11,11 @@ module.exports = {
   output: {
     clean: true,
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.[contenthash].js',
+    filename: 'main.[contenthash].js'
   },
   mode: 'production',
   resolve: {
-    extensions: ['.tsx', '.ts', 'jsx', '.js'],
+    extensions: ['.tsx', '.ts', 'jsx', '.js']
   },
   module: {
     rules: [
@@ -30,25 +30,25 @@ module.exports = {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src', 'styles'),
         use: [
-          miniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader'
         ]
-      },
+      }
     ]
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       inject: true,
       template: './public/index.html',
       filename: './index.html'
     }),
-    new miniCssExtractPlugin({
-      filename: "assets/index.[contenthash].css"
+    new MiniCssExtractPlugin({
+      filename: 'assets/index.[contenthash].css'
     })
-  ],
+  ]
   // devServer: {
   //   static: 'dist',
   //   watchContentBase: true,
   // },
-}
+};
