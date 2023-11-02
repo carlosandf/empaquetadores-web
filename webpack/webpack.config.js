@@ -1,5 +1,6 @@
 const path = require('node:path');
-const htmlWebpackPlugin = require('html-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**@type {import('webpack').Configuration} */
 
@@ -28,7 +29,11 @@ module.exports = {
       {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src', 'styles'),
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: [
+          miniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
       },
     ]
   },
@@ -37,6 +42,9 @@ module.exports = {
       inject: true,
       template: './public/index.html',
       filename: './index.html'
+    }),
+    new miniCssExtractPlugin({
+      filename: "assets/index.[contenthash].css"
     })
   ],
   // devServer: {
