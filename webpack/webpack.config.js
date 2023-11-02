@@ -10,7 +10,7 @@ module.exports = {
   output: {
     clean: true,
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.[hash].js',
+    filename: 'main.[contenthash].js',
   },
   mode: 'production',
   resolve: {
@@ -24,7 +24,12 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src', 'styles'),
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
     ]
   },
   plugins: [
@@ -33,5 +38,9 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html'
     })
-  ]
+  ],
+  // devServer: {
+  //   static: 'dist',
+  //   watchContentBase: true,
+  // },
 }

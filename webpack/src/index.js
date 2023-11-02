@@ -1,1 +1,1 @@
-alert('hola mundo')
+import './styles/index.css';
