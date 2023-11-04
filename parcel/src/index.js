@@ -18,7 +18,7 @@ const getProducts = async ({ offset, limit } = {}) => {
 const renderProducts = (data = []) => {
   const products = data?.map(product => (/* html */`
     <article class="Card">
-      <img src="${product?.images[0]}" alt="${product?.title}"/>
+      <img loading="lazy" src="${product?.images[0]}" alt="${product?.title}"/>
       <h2>${product.title}</h2>
     </article>
   `)).join('');
