@@ -2,6 +2,7 @@
   "name": "parcel",
   "version": "1.0.0",
   "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "./src/index.html",
   "scripts": {
     "start": "parcel serve --port 8080 src/index.html",
