@@ -24,7 +24,6 @@ body {
   box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
     1px 3px 8px rgba(39, 44, 49, 0.03);
   border-radius: 5px;
-  margin: 0 0 20px 0;
   display: block;
   animation-duration: 4s;
   animation-name: fade;
@@ -33,6 +32,8 @@ body {
 .Card img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
 
