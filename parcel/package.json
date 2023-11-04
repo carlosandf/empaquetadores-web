@@ -2,8 +2,10 @@
   "name": "parcel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "./src/index.html",
   "scripts": {
+    "start": "parcel serve --port 8080 src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "2.10.2",
+    "posthtml-include": "1.7.4",
     "semistandard": "17.0.0"
   }
 }
