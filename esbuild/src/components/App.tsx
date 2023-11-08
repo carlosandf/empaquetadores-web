@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import './App.css';
 
 type Prop = {
   message: string
