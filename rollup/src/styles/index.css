@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #3c484e;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px;
+  grid-template-columns: minmax(auto, 768px);
+  display: grid;
+  justify-content: center;
+}
+
+header {
+  margin: 1em 0;
+}
+.header-logo {
+  width: 100px;
+  height: auto;
+}
+
+.Items {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Card {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
+  border-radius: 5px;
+  display: block;
+  animation-duration: 4s;
+  animation-name: fade;
+}
+
+.Card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+.Card_info {
+  gap: 10px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Card_title {
+  font-weight: 300;
+  font-size: 16px;
+}
+.Card_price {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+footer {
+  height: 20dvh;
+  display: grid;
+  background: #f8f8f8;
+  place-content: center;
+  margin-top: 3rem;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
